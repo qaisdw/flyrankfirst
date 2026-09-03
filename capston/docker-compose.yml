@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=super-secret-jwt-key
+      - DATABASE_URL=sqlite:///./app.db
+    volumes:
+      - .:/app
